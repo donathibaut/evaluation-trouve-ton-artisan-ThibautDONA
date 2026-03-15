@@ -1,28 +1,28 @@
-import ExtLink from "../ExtLink";
+import { Link } from "react-router-dom";
 
 export default function Nav() {
   return (
     <header>
       <nav>
-        <ExtLink href="">
+        <Link to="/">
           <img src="" alt="Trouve ton artisan !" />
-        </ExtLink>
+        </Link>
         <ul>
           <li>loupe</li>
           <li>
             <ul>
               {/** remplacer par données du tableau de BDD */}
               <li>
-                <ExtLink href="">Bâtiment</ExtLink>
+                <Link to="qdsd">Bâtiment</Link>
               </li>
               <li>
-                <ExtLink href="">Sevices</ExtLink>
+                <Link>Sevices</Link>
               </li>
               <li>
-                <ExtLink href="">Fabrication</ExtLink>
+                <Link>Fabrication</Link>
               </li>
               <li>
-                <ExtLink href="">Alimentation</ExtLink>
+                <Link>Alimentation</Link>
               </li>
             </ul>
           </li>
