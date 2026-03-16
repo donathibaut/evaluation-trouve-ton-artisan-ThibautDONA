@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Results() {
   return (
     <main>
@@ -5,30 +7,36 @@ export default function Results() {
         <h1>Résultats pour ""</h1>
       </section>
       <section className="listResults">
-        <ul>
-          <li>
-            <h2>Artisan</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul>
-          <li>
-            <h2>Artisan</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul>
-          <li>
-            <h2>Artisan</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
+        <Link to="/artisan">
+          <ul>
+            <li>
+              <h2>Artisan</h2>
+            </li>
+            <li>note</li>
+            <li>spécialité</li>
+            <li>localisation</li>
+          </ul>
+        </Link>
+        <Link to="/artisan">
+          <ul>
+            <li>
+              <h2>Artisan</h2>
+            </li>
+            <li>note</li>
+            <li>spécialité</li>
+            <li>localisation</li>
+          </ul>
+        </Link>
+        <Link to="/artisan">
+          <ul>
+            <li>
+              <h2>Artisan</h2>
+            </li>
+            <li>note</li>
+            <li>spécialité</li>
+            <li>localisation</li>
+          </ul>
+        </Link>
       </section>
     </main>
   );

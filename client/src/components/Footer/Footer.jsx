@@ -1,4 +1,5 @@
 import ExtLink from "../ExtLink";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -17,16 +18,16 @@ export default function Footer() {
       </address>
       <ul>
         <li>
-          <ExtLink href="">Mentions légales</ExtLink>
+          <Link to="/mentions-legales">Mentions légales</Link>
         </li>
         <li>
-          <ExtLink href="">Données personnelles</ExtLink>
+          <Link to="/donnees-personnelles">Données personnelles</Link>
         </li>
         <li>
-          <ExtLink href="">Accessibilité</ExtLink>
+          <Link to="/accessibilite">Accessibilité</Link>
         </li>
         <li>
-          <ExtLink href="">Cookies</ExtLink>
+          <Link to="/cookies">Cookies</Link>
         </li>
       </ul>
     </footer>

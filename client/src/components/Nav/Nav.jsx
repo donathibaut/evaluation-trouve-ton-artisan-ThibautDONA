@@ -8,21 +8,23 @@ export default function Nav() {
           <img src="" alt="Trouve ton artisan !" />
         </Link>
         <ul>
-          <li>loupe</li>
+          <li>
+            <Link to="/results">loupe</Link>
+          </li>
           <li>
             <ul>
               {/** remplacer par données du tableau de BDD */}
               <li>
-                <Link to="qdsd">Bâtiment</Link>
+                <Link to="/results">Bâtiment</Link>
               </li>
               <li>
-                <Link>Sevices</Link>
+                <Link to="/results">Sevices</Link>
               </li>
               <li>
-                <Link>Fabrication</Link>
+                <Link to="/results">Fabrication</Link>
               </li>
               <li>
-                <Link>Alimentation</Link>
+                <Link to="/results">Alimentation</Link>
               </li>
             </ul>
           </li>
