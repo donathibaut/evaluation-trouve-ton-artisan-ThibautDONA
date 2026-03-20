@@ -1,18 +1,24 @@
+/**
+ * @file config.js
+ * @description Initialisation de sequelize
+ */
+
 const { Sequelize } = require("sequelize");
 
-/**
- * Importation de sequelize
- * @module dbConnection
- */
 /**
  * Mise en place de sequelize ('database', 'user', 'password', {})
  * @type {Sequelize}
  */
-const sequelize = new Sequelize(DB_NAME, USER_NAME, USER_PASSWORD, {
-  host: HOST,
-  port: DB_PORT,
-  dialect: "mysql",
-  logging: false,
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.USER_NAME,
+  process.env.USER_PASSWORD,
+  {
+    host: process.env.HOST,
+    port: parseInt(process.env.DB_PORT) || 3307,
+    dialect: "mysql",
+    logging: false,
+  },
+);
 
 module.exports = sequelize;

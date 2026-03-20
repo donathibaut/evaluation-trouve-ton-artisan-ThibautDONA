@@ -1,18 +1,34 @@
+/**
+ * @file index.js
+ * @description Connexion de l'API avec Sequelize
+ */
+
 const app = require("./app");
 const sequelize = require("./config/config");
 
-sequelize
-  .authenticate()
-  .then(() => {
+// Récupération des modèles
+const models = require("./models");
+
+/**
+ * Lancement de l'API
+ * @async
+ * @returns {Promise<void>}
+ */
+const initApi = async () => {
+  try {
+    await sequelize.authenticate();
     console.log("Connecté à mysql !");
-    return sequelize.sync();
-  })
-  .then(() => {
-    const port = process.env.DB_PORT || 3306;
+
+    await sequelize.sync();
+    console.log("Synchronisation réussie !");
+
+    const port = process.env.PORT || 3000;
     app.listen(port, () => {
-      console.log("Serveur lancé !");
+      console.log("Serveur lancé ! Port :", port);
     });
-  })
-  .catch((err) => {
-    console.log("Erreur de lancement du serveur : ", err);
-  });
+  } catch (err) {
+    console.log("Erreur de lancement du serveur :", err.message);
+  }
+};
+
+initApi();
