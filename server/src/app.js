@@ -12,10 +12,17 @@ const cors = require("cors");
  */
 const app = express();
 
+const artisanRoute = require("./routes/artisan-route");
+const route404 = require("./middlewares/route404");
+
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get("/", (req, res) => res.send("API is working !"));
+// routes
+app.use("/api/artisan", artisanRoute);
+
+// middlewares
+app.use(route404);
 
 module.exports = app;

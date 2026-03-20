@@ -10,7 +10,7 @@ const { Artisan, Ville, Specialite, Categorie } = require("../models");
  * @description Renvoie les données correspondantes aux champs associés à la Primary Key
  * @param {Object} req - Primary Key transmise via req.params.id
  * @param {Object} res - réponse serveur
- * @returns {Promise<void>} JSON
+ * @returns {Promise<void>} JSON contenant les données liées à la Primary Key (champ1, champ2, ...)
  */
 const infoArtisan = async (req, res) => {
   try {
