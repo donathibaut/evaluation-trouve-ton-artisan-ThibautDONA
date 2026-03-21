@@ -15,16 +15,26 @@ export default function Nav() {
             <ul>
               {/** remplacer par données du tableau de BDD */}
               <li>
-                <Link to="/results">Bâtiment</Link>
+                <Link to={{ pathname: "/results", search: "?cat=batiment" }}>
+                  Bâtiment
+                </Link>
               </li>
               <li>
-                <Link to="/results">Sevices</Link>
+                <Link to={{ pathname: "/results", search: "?cat=services" }}>
+                  Sevices
+                </Link>
               </li>
               <li>
-                <Link to="/results">Fabrication</Link>
+                <Link to={{ pathname: "/results", search: "?cat=fabrication" }}>
+                  Fabrication
+                </Link>
               </li>
               <li>
-                <Link to="/results">Alimentation</Link>
+                <Link
+                  to={{ pathname: "/results", search: "?cat=alimentation" }}
+                >
+                  Alimentation
+                </Link>
               </li>
             </ul>
           </li>

@@ -14,10 +14,13 @@ const { Artisan, Ville, Specialite, Categorie } = require("../models");
  */
 const infoArtisan = async (req, res) => {
   try {
-    // récupération de l'artisan
+    // récupère l'id de l'artisan demandé
+    const id = req.params.id;
+
+    // récupère les données de l'artisan
     const artisan = await Artisan.findOne({
       where: {
-        ID_ARTISAN: req.params.id,
+        ID_ARTISAN: id,
       },
       include: [
         { model: Ville },
