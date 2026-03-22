@@ -42,11 +42,11 @@ export const fetchSearchRoute = async (search) => {
 /**
  * @async
  * @function fetchNavbarRoute
- * @param {String} categorie - nom_cat
+ * @param {String} chosenCat - nom_cat choisi
  * @returns {Promise<Object>}
  * @description Renvoie le résultat du controller `catArtisans` de l'api
  */
-export const fetchNavbarRoute = async (categorie) => {
-  const res = await fetch(`${apiURL}/nav?categorie=${categorie}`);
+export const fetchNavbarRoute = async (chosenCat) => {
+  const res = await fetch(`${apiURL}/nav?cat=${chosenCat}`);
   return await res.json();
 };

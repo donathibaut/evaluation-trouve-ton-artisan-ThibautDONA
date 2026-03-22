@@ -10,7 +10,7 @@ import { fetchTopRoute } from "../api";
  * @function useTopArtisans
  * @returns {Object}
  * @returns {Array} top - retourne le classement sous forme de tableau
- * @returns {Boolean} loading - retourne l'état du chargement (loading)
+ * @returns {Boolean} loading - retourne l'état du chargement
  * @description Fournit le classement des artisans
  */
 export default function useTopArtisans() {

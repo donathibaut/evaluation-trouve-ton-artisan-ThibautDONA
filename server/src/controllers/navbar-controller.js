@@ -18,7 +18,7 @@ const { Op } = require("sequelize");
 const catArtisans = async (req, res) => {
   try {
     // récupère la catégorie demandée par le <Link> de la navbar via la valeur de "?categorie="
-    const categorie = req.query.categorie;
+    const categorie = req.query.cat;
 
     const catList = await Categorie.findAll({
       where: {

@@ -15,7 +15,7 @@ export default function Accueil() {
         </ol>
       </section>
       <section className="list">
-        <TopArtisansList top={top} loading={loading} />
+        <TopArtisansList top={top} loading={loading}></TopArtisansList>
       </section>
     </main>
   );
