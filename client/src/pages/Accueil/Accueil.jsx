@@ -1,3 +1,6 @@
+import TopArtisansList from "../../components/Artisans/TopArtisansList";
+import useTopArtisans from "../../services/topArtisans/useTopArtisans";
+
 export default function Accueil() {
   return (
     <main>
@@ -10,32 +13,7 @@ export default function Accueil() {
           <li>Une réponse sera apportée sous 48h.</li>
         </ol>
       </section>
-      <section className="list">
-        <ul className="list1">
-          <li>
-            <h2>Artisan 1</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul className="list2">
-          <li>
-            <h2>Artisan 2</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul className="list3">
-          <li>
-            <h2>Artisan 3</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-      </section>
+      <section className="list"></section>
     </main>
   );
 }

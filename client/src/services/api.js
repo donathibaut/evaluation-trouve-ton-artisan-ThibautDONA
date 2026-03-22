@@ -1,0 +1,52 @@
+/**
+ * @file api.js
+ * @description Relie REACT et Express
+ */
+
+const apiURL = "http://localhost:3001/api";
+
+/**
+ * @async
+ * @function fetchArtisanRoute
+ * @param {Number} id - ID_ARTISAN
+ * @returns {Promise<Object>} Renvoie le résultat du controller `infoArtisan` de l'api
+ */
+export const fetchArtisanRoute = async (id) => {
+  const res = await fetch(`${apiURL}/artisan?id=${id}`);
+  return await res.json();
+};
+
+/**
+ * @async
+ * @function fetchTopRoute
+ * @returns {Promise<Object>}
+ * @description Renvoie le résultat du controller `topArtisans` de l'api
+ */
+export const fetchTopRoute = async () => {
+  const res = await fetch(`${apiURL}/top`);
+  return await res.json();
+};
+
+/**
+ * @async
+ * @function fetchSearchRoute
+ * @param {String} search - nom_artisan
+ * @returns {Promise<Object>}
+ * @description Renvoie le résultat du controller `searchArtisans` de l'api
+ */
+export const fetchSearchRoute = async (search) => {
+  const res = await fetch(`${apiURL}/search?artisan=${search}`);
+  return await res.json();
+};
+
+/**
+ * @async
+ * @function fetchNavbarRoute
+ * @param {String} categorie - nom_cat
+ * @returns {Promise<Object>}
+ * @description Renvoie le résultat du controller `catArtisans` de l'api
+ */
+export const fetchNavbarRoute = async (categorie) => {
+  const res = await fetch(`${apiURL}/nav?categorie=${categorie}`);
+  return await res.json();
+};

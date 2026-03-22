@@ -8,7 +8,7 @@ const router = express.Router();
 // import du controller
 const infoArtisan = require("../controllers/artisan-controller");
 
-// récupération de l'id -> appel du controller
-router.get("/:id", infoArtisan);
+// appel du controller
+router.get("/", infoArtisan);
 
 module.exports = router;

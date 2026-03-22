@@ -1,4 +1,9 @@
 /**
+ * @file ExtLink.js
+ * @description Contient une fonction permettant de disposer de liens externes déjà paramétrés et sécurisés
+ */
+
+/**
  * Permet de disposer de liens externes déjà paramétrés et sécurisés
  * @component
  * @param {Object} props
