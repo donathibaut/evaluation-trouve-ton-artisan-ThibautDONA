@@ -1,6 +1,9 @@
 /**
- *
- * @returns
+ * @function TopArtisansList
+ * @param {Object} props
+ * @param {Array} props.top - tableau contenant les artisans les mieux notés
+ * @param {Boolean} props.loading - permet de définir l'état du chargement
+ * @returns {JSX.Element}
  * @description Gestion du chargement et préparation de l'affichage du classement des artisans
  */
 export default function TopArtisansList({ top, loading }) {

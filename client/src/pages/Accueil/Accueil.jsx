@@ -2,6 +2,7 @@ import TopArtisansList from "../../components/Artisans/TopArtisansList";
 import useTopArtisans from "../../services/topArtisans/useTopArtisans";
 
 export default function Accueil() {
+  const { top, loading } = useTopArtisans();
   return (
     <main>
       <section className="guide">
@@ -13,7 +14,9 @@ export default function Accueil() {
           <li>Une réponse sera apportée sous 48h.</li>
         </ol>
       </section>
-      <section className="list"></section>
+      <section className="list">
+        <TopArtisansList top={top} loading={loading} />
+      </section>
     </main>
   );
 }

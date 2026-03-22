@@ -5,7 +5,7 @@ export default function Nav() {
     <header>
       <nav>
         <Link to="/">
-          <img src="" alt="Trouve ton artisan !" />
+          <img alt="Trouve ton artisan !" />
         </Link>
         <ul>
           <li>

@@ -1,3 +1,8 @@
+/**
+ * @file useTopArtisans.js
+ * @description Fournit le classement des artisans
+ */
+
 import { useState, useEffect } from "react";
 import { fetchTopRoute } from "../api";
 
@@ -25,8 +30,6 @@ export default function useTopArtisans() {
         setLoading(false);
       } catch (err) {
         console.error("La requête n'a pas abouti :", err);
-        setLoading(false);
-      } finally {
         setLoading(false);
       }
     };
