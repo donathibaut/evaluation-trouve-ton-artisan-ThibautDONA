@@ -26,7 +26,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api/artisan", artisanRoute);
 app.use("/api/top", topRoute);
 app.use("/api/search", searchRoute);
-app.use("/api/nav", navbarRoute);
+app.use("/api/results", navbarRoute);
 
 // middlewares
 app.use(route404);

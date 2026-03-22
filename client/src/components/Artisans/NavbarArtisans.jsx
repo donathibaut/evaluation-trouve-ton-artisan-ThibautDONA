@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
  */
 export default function NavbarArtisans({ cat, loading }) {
   return loading ? (
-    <p className="resultsLoading">Chargement en cours...</p>
+    <p className="loading">Chargement en cours...</p>
   ) : (
     cat[0]?.specialites.map((spe) => {
       return spe.artisans.map((artisan) => {

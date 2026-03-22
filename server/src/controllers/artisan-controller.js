@@ -21,7 +21,7 @@ const infoArtisan = async (req, res) => {
     const id = req.query.id;
 
     // récupère les données de l'artisan
-    const artisan = await Artisan.findOne({
+    const artisanData = await Artisan.findOne({
       where: {
         ID_ARTISAN: { [Op.eq]: id },
       },
@@ -38,7 +38,7 @@ const infoArtisan = async (req, res) => {
       ],
     });
 
-    if (!artisan) {
+    if (!artisanData) {
       return res.status(404).json({
         message: "Artisan introuvable",
       });
@@ -46,7 +46,7 @@ const infoArtisan = async (req, res) => {
 
     res.status(200).json({
       message: "Succès : Données obtenues",
-      artisan,
+      artisanData,
     });
   } catch (err) {
     res.status(500).json({

@@ -8,7 +8,7 @@
  */
 export default function TopArtisansList({ top, loading }) {
   return loading ? (
-    <p className="topLoading">Chargement en cours...</p>
+    <p className="loading">Chargement en cours...</p>
   ) : (
     top.map((artisan) => {
       return (
