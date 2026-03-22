@@ -6,6 +6,13 @@
 import { useState, useEffect } from "react";
 import { fetchTopRoute } from "../api";
 
+/**
+ * @function useTopArtisans
+ * @returns {Object}
+ * @returns {Array} top - retourne le classement sous forme de tableau
+ * @returns {Boolean} loading - retourne l'état du chargement (loading)
+ * @description Fournit le classement des artisans
+ */
 export default function useTopArtisans() {
   // gestion de l'état de la liste des artisans
   const [top, setTop] = useState([]);

@@ -1,5 +1,5 @@
 import TopArtisansList from "../../components/Artisans/TopArtisansList";
-import useTopArtisans from "../../services/topArtisans/useTopArtisans";
+import useTopArtisans from "../../services/Artisans/useTopArtisans";
 
 export default function Accueil() {
   const { top, loading } = useTopArtisans();
