@@ -36,8 +36,9 @@ const searchArtisans = async (req, res) => {
     });
 
     if (research.length === 0) {
-      return res.status(404).json({
-        message: "Artisans introuvables",
+      return res.status(200).json({
+        message: "Aucun résultat pour ce nom",
+        research: [],
       });
     }
 

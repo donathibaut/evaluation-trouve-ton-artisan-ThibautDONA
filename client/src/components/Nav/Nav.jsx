@@ -1,9 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import useNavbarArtisans from "../../services/Artisans/useNavbarArtisans";
 import cleanUrl from "../../utils/cleanUrl";
+import searchHandler from "../../utils/handlers/searchHandler";
+import { useState } from "react";
 
 export default function Nav() {
   const { cat, loading } = useNavbarArtisans();
+
+  // nécessaire pour le fonctionnement de la searchbar
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
+
   return (
     <header>
       <nav>
@@ -12,11 +19,25 @@ export default function Nav() {
         </Link>
         <ul>
           <li>
-            <Link to="/results">loupe</Link>
+            {/* Barre de recherche */}
+            <form
+              className="searchBar"
+              onSubmit={(event) => searchHandler(event, input, navigate)}
+            >
+              <input
+                type="text"
+                placeholder="Nom de l'artisan..."
+                // mise à jour dynamique quand l'utilisateur écrit
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                required
+              />
+              <button type="submit">loupe</button>
+            </form>
           </li>
           <li>
             <ul>
-              {/*La database alimente les liens de navigation sur le site*/}
+              {/* La database alimente les liens de navigation sur le site */}
               {loading ? (
                 <li>Chargement en cours...</li>
               ) : (

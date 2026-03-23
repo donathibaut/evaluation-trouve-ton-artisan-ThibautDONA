@@ -9,28 +9,33 @@ import { Link } from "react-router-dom";
  * @description Gestion du chargement et préparation de l'affichage des résultats
  */
 export default function NavbarArtisans({ cat, loading }) {
-  return loading ? (
-    <p className="loading">Chargement en cours...</p>
-  ) : (
-    cat[0]?.specialites.map((spe) => {
-      return spe.artisans.map((artisan) => {
-        return (
-          <Link
-            className="result"
-            to={`/artisan?id=${artisan.ID_ARTISAN}`}
-            key={artisan.ID_ARTISAN}
-          >
-            <ul>
-              <li>
-                <h2>{artisan.nom_artisan}</h2>
-              </li>
-              <li>{artisan.note}</li>
-              <li>{spe.nom_spe}</li>
-              <li>{artisan.ville?.nom_ville}</li>
-            </ul>
-          </Link>
-        );
-      });
-    })
-  );
+  if (loading) {
+    return <p className="loading">Chargement en cours...</p>;
+  }
+
+  // vérifie si les données sont récupérées
+  if (!cat || cat?.length === 0 || !cat[0]?.specialites) {
+    return <p className="noMatch">Une erreur est survenue</p>;
+  }
+
+  return cat[0]?.specialites.map((spe) => {
+    return spe.artisans?.map((artisan) => {
+      return (
+        <Link
+          className="result"
+          to={`/artisan?id=${artisan.ID_ARTISAN}`}
+          key={artisan.ID_ARTISAN}
+        >
+          <ul>
+            <li>
+              <h2>{artisan.nom_artisan}</h2>
+            </li>
+            <li>{artisan.note}</li>
+            <li>{spe.nom_spe}</li>
+            <li>{artisan.ville?.nom_ville}</li>
+          </ul>
+        </Link>
+      );
+    });
+  });
 }

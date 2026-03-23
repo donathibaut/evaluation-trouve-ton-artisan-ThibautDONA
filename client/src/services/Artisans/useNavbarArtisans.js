@@ -8,6 +8,7 @@ import { fetchNavbarRoute } from "../api";
 
 /**
  * @function useNavbarArtisans
+ * @param {String} chosenCat - catégorie
  * @returns {Object}
  * @returns {Array} cat - retourne la catégorie sous forme de tableau
  * @returns {Boolean} loading - retourne l'état du chargement
