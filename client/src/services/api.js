@@ -47,6 +47,9 @@ export const fetchSearchRoute = async (search) => {
  * @description Renvoie le résultat du controller `catArtisans` de l'api
  */
 export const fetchNavbarRoute = async (chosenCat) => {
-  const res = await fetch(`${apiURL}/results?cat=${chosenCat}`);
+  const url = chosenCat
+    ? `${apiURL}/results?cat=${chosenCat}`
+    : `${apiURL}/results`;
+  const res = await fetch(url);
   return await res.json();
 };

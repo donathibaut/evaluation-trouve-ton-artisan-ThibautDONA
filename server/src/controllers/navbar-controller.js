@@ -17,39 +17,48 @@ const { Op } = require("sequelize");
  */
 const catArtisans = async (req, res) => {
   try {
-    // récupère la catégorie demandée par le <Link> de la navbar via la valeur de "?categorie="
     const categorie = req.query.cat;
 
-    const catList = await Categorie.findAll({
-      where: {
-        // [Op.like]: `%${categorie}%` -> on recherche un nom semblable à ce que l'utilisateur a choisi
-        nom_cat: { [Op.like]: `%${categorie}%` },
-      },
-      include: [
-        {
-          model: Specialite,
-          include: [
-            {
-              model: Artisan,
-              include: [
-                {
-                  model: Ville,
-                },
-              ],
-            },
-          ],
+    let filter = {};
+    /*
+     *  s'il y a une catégorie précisée dans l'url ("?cat=") -> on la sélectionne pour les résultats de recherche
+     *  sinon on prend le nom et l'id de chaque catégorie pour les liens de la navbar
+     */
+    if (categorie) {
+      filter = {
+        where: {
+          nom_cat: { [Op.like]: `%${categorie}%` },
         },
-      ],
-      order: [[Specialite, Artisan, "nom_artisan", "ASC"]],
-    });
+        include: [
+          {
+            model: Specialite,
+            include: [
+              {
+                model: Artisan,
+                include: [{ model: Ville }],
+              },
+            ],
+          },
+        ],
+        order: [[Specialite, Artisan, "nom_artisan", "ASC"]],
+      };
+    } else {
+      filter = {
+        attributes: ["ID_CATEGORIE", "nom_cat"],
+        order: [["nom_cat", "ASC"]],
+      };
+    }
+
+    const catList = await Categorie.findAll(filter);
 
     res.status(200).json({
-      message: "Succès : Données obtenues",
+      message: "Succès",
       catList,
     });
   } catch (err) {
+    console.error("Erreur Backend :", err);
     res.status(500).json({
-      message: "Erreur : Données non obtenues :",
+      message: "Erreur serveur",
       error: err.message,
     });
   }

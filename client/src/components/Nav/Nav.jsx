@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import useNavbarArtisans from "../../services/Artisans/useNavbarArtisans";
+import cleanUrl from "../../utils/cleanUrl";
 
 export default function Nav() {
+  const { cat, loading } = useNavbarArtisans();
   return (
     <header>
       <nav>
@@ -13,29 +16,26 @@ export default function Nav() {
           </li>
           <li>
             <ul>
-              {/** remplacer par données du tableau de BDD */}
-              <li>
-                <Link to={{ pathname: "/results", search: "?cat=batiment" }}>
-                  Bâtiment
-                </Link>
-              </li>
-              <li>
-                <Link to={{ pathname: "/results", search: "?cat=services" }}>
-                  Sevices
-                </Link>
-              </li>
-              <li>
-                <Link to={{ pathname: "/results", search: "?cat=fabrication" }}>
-                  Fabrication
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to={{ pathname: "/results", search: "?cat=alimentation" }}
-                >
-                  Alimentation
-                </Link>
-              </li>
+              {/*La database alimente les liens de navigation sur le site*/}
+              {loading ? (
+                <li>Chargement en cours...</li>
+              ) : (
+                cat.map((categorie) => {
+                  return (
+                    <li key={categorie.ID_CATEGORIE}>
+                      <Link
+                        to={{
+                          pathname: "/results",
+                          // On utilise bien nom_cat et on sécurise avec ?.
+                          search: `?cat=${cleanUrl(categorie.nom_cat)}`,
+                        }}
+                      >
+                        {categorie.nom_cat}
+                      </Link>
+                    </li>
+                  );
+                })
+              )}
             </ul>
           </li>
         </ul>
