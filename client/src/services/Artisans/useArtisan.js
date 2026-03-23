@@ -8,6 +8,7 @@ import { fetchArtisanRoute } from "../api";
 
 /**
  * @function useArtisan
+ * @param {Number} chosenId - id utilisateur
  * @returns {Object}
  * @returns {Array} artisan - retourne les données de l'artisan sous forme de tableau
  * @returns {Boolean} loading - retourne l'état du chargement

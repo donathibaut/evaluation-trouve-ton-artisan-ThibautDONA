@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useSearchParams } from "react-router-dom";
 import NavbarArtisans from "../../components/Artisans/NavbarArtisans";
 import SearchArtisans from "../../components/Artisans/SearchArtisans";
@@ -17,23 +18,32 @@ export default function Results() {
   // récupère le nom de la catégorie/artisan pour indiquer le résultat à l'utilisateur
   const keyWord = chosenCat ? cat[0]?.nom_cat : chosenArtisan;
   return (
-    <main>
-      <section className="searchWord">
-        <h1>Résultats pour "{keyWord}"</h1>
-      </section>
-      <section className="listResults">
-        {chosenArtisan && (
-          <SearchArtisans
-            artisan={search}
-            loading={searchLoading}
-            message={message}
-          ></SearchArtisans>
-        )}
+    <>
+      <Helmet>
+        <title>{keyWord ? `"${keyWord}"` : "..."}</title>
+        <meta
+          name="description"
+          content={keyWord ? `Résultats pour : ${keyWord}` : "..."}
+        />
+      </Helmet>
+      <main>
+        <section className="searchWord">
+          <h1>Résultats pour "{keyWord}"</h1>
+        </section>
+        <section className="listResults">
+          {chosenArtisan && (
+            <SearchArtisans
+              artisan={search}
+              loading={searchLoading}
+              message={message}
+            ></SearchArtisans>
+          )}
 
-        {chosenCat && (
-          <NavbarArtisans cat={cat} loading={loading}></NavbarArtisans>
-        )}
-      </section>
-    </main>
+          {chosenCat && (
+            <NavbarArtisans cat={cat} loading={loading}></NavbarArtisans>
+          )}
+        </section>
+      </main>
+    </>
   );
 }
