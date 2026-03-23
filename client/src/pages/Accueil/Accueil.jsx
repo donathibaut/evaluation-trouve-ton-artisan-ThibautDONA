@@ -1,4 +1,8 @@
+import TopArtisansList from "../../components/Artisans/TopArtisansList";
+import useTopArtisans from "../../services/Artisans/useTopArtisans";
+
 export default function Accueil() {
+  const { top, loading } = useTopArtisans();
   return (
     <main>
       <section className="guide">
@@ -11,30 +15,7 @@ export default function Accueil() {
         </ol>
       </section>
       <section className="list">
-        <ul className="list1">
-          <li>
-            <h2>Artisan 1</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul className="list2">
-          <li>
-            <h2>Artisan 2</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
-        <ul className="list3">
-          <li>
-            <h2>Artisan 3</h2>
-          </li>
-          <li>note</li>
-          <li>spécialité</li>
-          <li>localisation</li>
-        </ul>
+        <TopArtisansList top={top} loading={loading}></TopArtisansList>
       </section>
     </main>
   );

@@ -4,20 +4,26 @@
  */
 const { Artisan, Ville, Specialite, Categorie } = require("../models");
 
+// nécessaire pour utiliser Op.eq (Operator = ...)
+const { Op } = require("sequelize");
+
 /**
  * @async
  * @function infoArtisans
  * @description Renvoie les données correspondantes aux champs associés à la Primary Key
- * @param {Object} req - Primary Key transmise via req.params.id
+ * @param {Object} req - Primary Key transmise via req.query.id
  * @param {Object} res - réponse serveur
  * @returns {Promise<void>} JSON contenant les données liées à la Primary Key (champ1, champ2, ...)
  */
 const infoArtisan = async (req, res) => {
   try {
-    // récupération de l'artisan
-    const artisan = await Artisan.findOne({
+    // récupère l'id de l'artisan demandé via la valeur de "?id="
+    const id = req.query.id;
+
+    // récupère les données de l'artisan
+    const artisanData = await Artisan.findOne({
       where: {
-        ID_ARTISAN: req.params.id,
+        ID_ARTISAN: { [Op.eq]: id },
       },
       include: [
         { model: Ville },
@@ -32,7 +38,7 @@ const infoArtisan = async (req, res) => {
       ],
     });
 
-    if (!artisan) {
+    if (!artisanData) {
       return res.status(404).json({
         message: "Artisan introuvable",
       });
@@ -40,7 +46,7 @@ const infoArtisan = async (req, res) => {
 
     res.status(200).json({
       message: "Succès : Données obtenues",
-      artisan,
+      artisanData,
     });
   } catch (err) {
     res.status(500).json({

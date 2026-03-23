@@ -1,31 +1,62 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import useNavbarArtisans from "../../services/Artisans/useNavbarArtisans";
+import cleanUrl from "../../utils/cleanUrl";
+import searchHandler from "../../utils/handlers/searchHandler";
+import { useState } from "react";
 
 export default function Nav() {
+  const { cat, loading } = useNavbarArtisans();
+
+  // nécessaire pour le fonctionnement de la searchbar
+  const navigate = useNavigate();
+  const [input, setInput] = useState("");
+
   return (
     <header>
       <nav>
         <Link to="/">
-          <img src="" alt="Trouve ton artisan !" />
+          <img alt="Trouve ton artisan !" />
         </Link>
         <ul>
           <li>
-            <Link to="/results">loupe</Link>
+            {/* Barre de recherche */}
+            <form
+              className="searchBar"
+              onSubmit={(event) => searchHandler(event, input, navigate)}
+            >
+              <input
+                type="text"
+                placeholder="Nom de l'artisan..."
+                // mise à jour dynamique quand l'utilisateur écrit
+                value={input}
+                onChange={(event) => setInput(event.target.value)}
+                required
+              />
+              <button type="submit">loupe</button>
+            </form>
           </li>
           <li>
             <ul>
-              {/** remplacer par données du tableau de BDD */}
-              <li>
-                <Link to="/results">Bâtiment</Link>
-              </li>
-              <li>
-                <Link to="/results">Sevices</Link>
-              </li>
-              <li>
-                <Link to="/results">Fabrication</Link>
-              </li>
-              <li>
-                <Link to="/results">Alimentation</Link>
-              </li>
+              {/* La database alimente les liens de navigation sur le site */}
+              {loading ? (
+                <li>Chargement en cours...</li>
+              ) : (
+                cat.map((categorie) => {
+                  return (
+                    <li key={categorie.ID_CATEGORIE}>
+                      <Link
+                        to={{
+                          pathname: "/results",
+                          // On utilise bien nom_cat et on sécurise avec ?.
+                          search: `?cat=${cleanUrl(categorie.nom_cat)}`,
+                        }}
+                      >
+                        {categorie.nom_cat}
+                      </Link>
+                    </li>
+                  );
+                })
+              )}
             </ul>
           </li>
         </ul>

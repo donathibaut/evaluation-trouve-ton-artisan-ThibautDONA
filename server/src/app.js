@@ -13,6 +13,9 @@ const cors = require("cors");
 const app = express();
 
 const artisanRoute = require("./routes/artisan-route");
+const topRoute = require("./routes/top-route");
+const searchRoute = require("./routes/search-route");
+const navbarRoute = require("./routes/navbar-route");
 const route404 = require("./middlewares/route404");
 
 app.use(cors());
@@ -21,6 +24,9 @@ app.use(express.urlencoded({ extended: false }));
 
 // routes
 app.use("/api/artisan", artisanRoute);
+app.use("/api/top", topRoute);
+app.use("/api/search", searchRoute);
+app.use("/api/results", navbarRoute);
 
 // middlewares
 app.use(route404);
