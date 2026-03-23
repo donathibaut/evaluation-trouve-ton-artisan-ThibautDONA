@@ -15,7 +15,7 @@ export default function Results() {
   const { search, searchLoading, message } = useSearchArtisans(chosenArtisan);
 
   // récupère le nom de la catégorie/artisan pour indiquer le résultat à l'utilisateur
-  const keyWord = chosenCat ? chosenCat : chosenArtisan;
+  const keyWord = chosenCat ? cat[0]?.nom_cat : chosenArtisan;
   return (
     <main>
       <section className="searchWord">
