@@ -29,42 +29,47 @@ export default function ArtisanCard({ artisan, loading }) {
         <p>{artisan.a_propos}</p>
       </div>
       <div className="contact">
-        {/*Formulaire destiné à l'adresse mail {artisan.email}*/}
+        {/*
+          ATTENTION : Dans le cadre du devoir, je n'ai pas paramétré ce formulaire.
+          Celui-ci rempli, renvoie vers la page "Not Found".
+        */}
         <h2>Formulaire de contact</h2>
-        <form action="post" className="contact__form">
-          <label htmlFor="name">nom</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Votre nom..."
-            required
-          />
-          <label htmlFor="email">email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Votre adresse mail..."
-            required
-          />
-          <label htmlFor="message">message</label>
-          <textarea
-            name="message"
-            id="message"
-            placeholder="Vote message..."
-            rows={"5"}
-            cols={"10"}
-            required
-          ></textarea>
-          <button type="submit">Envoyer</button>
-        </form>
+        {artisan.email && (
+          <form action="post" className="contact__form">
+            <label htmlFor="name">nom</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Votre nom..."
+              required
+            />
+            <label htmlFor="email">email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Votre adresse mail..."
+              required
+            />
+            <label htmlFor="message">message</label>
+            <textarea
+              name="message"
+              id="message"
+              placeholder="Vote message..."
+              rows={"5"}
+              cols={"10"}
+              required
+            ></textarea>
+            <button type="submit">Envoyer</button>
+          </form>
+        )}
       </div>
-      <div className="website">
-        <ExtLink href={artisan.site_web}>
-          Accéder au site web <img src="" alt="flèche" />
-        </ExtLink>
-      </div>
+      {artisan.site_web && (
+        <div className="website">
+          <ExtLink href={artisan.site_web}>Accéder au site web</ExtLink>
+        </div>
+      )}
     </section>
   );
 }
