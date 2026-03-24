@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.3.8",
+    "bootstrap-icons": "^1.13.1",
     "react-helmet-async": "^3.0.0"
   }
 }

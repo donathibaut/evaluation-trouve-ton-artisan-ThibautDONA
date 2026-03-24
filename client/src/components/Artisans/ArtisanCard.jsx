@@ -1,5 +1,7 @@
 import ExtLink from "../ExtLink";
 
+import defaultArtisan from "../../assets/img/defaultArtisan.png";
+
 /**
  * @function ArtisanCard
  * @param {Object} props
@@ -14,7 +16,7 @@ export default function ArtisanCard({ artisan, loading }) {
   ) : (
     <section className="card">
       <h1>{artisan.nom_artisan}</h1>
-      <img src="" alt="logo ou photo de l'entreprise" />
+      <img src={defaultArtisan} alt="logo ou photo de l'entreprise" />
       <div className="note">
         <p>{artisan.note}</p>
       </div>
