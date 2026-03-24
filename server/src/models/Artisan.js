@@ -34,12 +34,10 @@ const Artisan = sequelize.define(
     email: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "Aucun email renseigné...",
     },
     site_web: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "Aucun site web renseigné...",
     },
     top: {
       type: DataTypes.BOOLEAN,

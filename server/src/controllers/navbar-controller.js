@@ -21,8 +21,8 @@ const catArtisans = async (req, res) => {
 
     let filter = {};
     /*
-     *  s'il y a une catégorie précisée dans l'url ("?cat=") -> on la sélectionne pour les résultats de recherche
-     *  sinon on prend le nom et l'id de chaque catégorie pour les liens de la navbar
+      s'il y a une catégorie précisée dans l'url ("?cat=") -> on la sélectionne pour les résultats de recherche
+      sinon on prend le nom et l'id de chaque catégorie pour les liens de la navbar
      */
     if (categorie) {
       filter = {
