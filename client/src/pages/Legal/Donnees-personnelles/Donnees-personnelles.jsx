@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
 
+import "../Legal.scss";
+
 export default function DonneesPersonnelles() {
   return (
     <>
@@ -12,7 +14,7 @@ export default function DonneesPersonnelles() {
       </Helmet>
       <main>
         <section>
-          <h1>Page en construction...</h1>
+          <h1 className="construct">Page en construction...</h1>
         </section>
       </main>
     </>
