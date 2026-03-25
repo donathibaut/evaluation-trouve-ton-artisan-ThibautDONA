@@ -5,6 +5,8 @@ import SearchArtisans from "../../components/Artisans/SearchArtisans";
 import useNavbarArtisans from "../../services/Artisans/useNavbarArtisans";
 import useSearchArtisans from "../../services/Artisans/useSearchArtisans";
 
+import "./Results.scss";
+
 export default function Results() {
   // récupère le paramètre "?cat=" de l'URL contenu dans le <Link> de la navbar (Nav.jsx)
   const [searchParams] = useSearchParams();
@@ -26,9 +28,9 @@ export default function Results() {
           content={keyWord ? `Résultats pour : ${keyWord}` : "..."}
         />
       </Helmet>
-      <main>
+      <main className="resultats">
         <section className="searchWord">
-          <h1>Résultats pour "{keyWord}"</h1>
+          <h1 className="searchWordTitle">Résultats pour "{keyWord}"</h1>
         </section>
         <section className="listResults">
           {chosenArtisan && (

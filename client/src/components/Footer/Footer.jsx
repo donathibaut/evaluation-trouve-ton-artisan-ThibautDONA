@@ -1,14 +1,20 @@
 import ExtLink from "../ExtLink";
 import { Link } from "react-router-dom";
 
+import "./Footer.scss";
+
 export default function Footer() {
   return (
     <footer>
       <address>
         <ul>
           <li>
-            <ExtLink href="https://maps.app.goo.gl/4yyKiW7mV9J8knXPA">
-              101 cours Charlemagne CS 20033 69269 LYON CEDEX 02 France
+            <ExtLink
+              className="loc"
+              href="https://maps.app.goo.gl/4yyKiW7mV9J8knXPA"
+            >
+              101 cours Charlemagne<br></br>CS 20033 69269<br></br>LYON CEDEX 02
+              <br></br>France
             </ExtLink>
           </li>
           <li>
@@ -16,7 +22,7 @@ export default function Footer() {
           </li>
         </ul>
       </address>
-      <ul>
+      <ul className="legalList">
         <li>
           <Link to="/mentions-legales">Mentions légales</Link>
         </li>

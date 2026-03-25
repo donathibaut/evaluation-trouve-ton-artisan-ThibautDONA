@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import ArtisanRating from "./Rating/ArtisanRating";
+
 /**
  * @function SearchArtisans
  * @param {Object} props
@@ -22,17 +24,19 @@ export default function SearchArtisans({ artisan, loading, message }) {
   return artisan.map((element) => {
     return (
       <Link
-        className="result"
+        className={`result card resultCard ${element.top ? "" : "notTop"}`}
         to={`/artisan?id=${element.ID_ARTISAN}`}
         key={element.ID_ARTISAN}
       >
-        <ul>
+        <ul className="card-body cardList">
           <li>
             <h2>{element.nom_artisan}</h2>
           </li>
-          <li>{element.note}</li>
-          <li>{element.specialite?.nom_spe}</li>
-          <li>{element.ville?.nom_ville}</li>
+          <li>
+            <ArtisanRating note={element.note}></ArtisanRating>
+          </li>
+          <li className="detailText">{element.specialite?.nom_spe}</li>
+          <li className="detailText">{element.ville?.nom_ville}</li>
         </ul>
       </Link>
     );

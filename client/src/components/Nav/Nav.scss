@@ -1,0 +1,107 @@
+header {
+  .navbar {
+    padding: 0;
+    box-shadow: 0 0 10px;
+
+    // CLASS
+    .container-fluid {
+      padding: 0 25px;
+      display: flex;
+      justify-content: space-between;
+
+      i {
+        color: #0074c7;
+        font-size: 1.3em;
+      }
+      li {
+        font-size: 2em;
+      }
+      .bi-justify-left {
+        display: inline-block;
+        transform: rotate(180deg);
+      }
+      .bsMenus {
+        display: flex;
+        gap: 25px;
+      }
+      .btn-close {
+        filter: invert(31%) sepia(94%) saturate(1145%) hue-rotate(174deg)
+          brightness(97%) contrast(101%);
+        opacity: 1;
+      }
+      .logo {
+        height: 50px;
+      }
+      .nav-link {
+        color: #384050;
+      }
+      .navbar-toggler {
+        border: 0;
+      }
+      .navbar-toggler {
+        padding: 0;
+      }
+      .offcanvas {
+        top: 60px;
+        border-top: 3px solid #f1f8fc;
+      }
+      .offcanvas-backdrop {
+        display: none;
+      }
+      .searchBar {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        border: #0074c7 solid 1px;
+        border-left: 0;
+        border-top: 0;
+
+        input {
+          border: none;
+          width: 100%;
+        }
+        button {
+          border: 0;
+          background: none;
+          width: fit-content;
+        }
+
+        // CLASS
+        .loupeBtn {
+          padding: 0 5px 0 5px;
+          margin: 0;
+        }
+      }
+      // RESPONSIVE
+      @media all and (min-width: 768px) {
+        .logo {
+          height: 80px;
+        }
+        .bsMenus {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+    // RESPONSIVE
+    @media all and (min-width: 768px) {
+      .container-fluid {
+        .nav-link {
+          font-size: 1.3rem;
+          margin-top: 8px;
+          padding: 0 8px;
+        }
+      }
+    }
+    @media all and (min-width: 1440px) {
+      .container-fluid {
+        padding: 0 90px;
+      }
+    }
+  }
+}
+
+.carNSearch {
+  position: fixed;
+}

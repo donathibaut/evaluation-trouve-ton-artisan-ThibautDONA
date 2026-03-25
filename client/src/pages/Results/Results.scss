@@ -1,0 +1,40 @@
+.listResults {
+  display: grid;
+  grid-template-columns: 1;
+  gap: 15px;
+}
+
+.resultCard {
+  text-align: center;
+  text-decoration: none;
+  background-color: #82b864;
+
+  i,
+  li {
+    color: #ffffff;
+  }
+
+  // CLASS
+  .cardList {
+    padding: 30px;
+  }
+  .detailText {
+    padding-top: 15px;
+  }
+}
+.resultCard.notTop {
+  background-color: #cd2c2e;
+}
+.searchWordTitle {
+  color: #384050;
+  font-weight: normal;
+  font-size: 1rem;
+  text-align: center;
+}
+
+// RESPONSIVE
+@media all and (min-width: 768px) {
+  .listResults {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
