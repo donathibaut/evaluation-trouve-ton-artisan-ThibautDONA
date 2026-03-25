@@ -23,7 +23,9 @@ export default function ArtisanCard({ artisan, loading }) {
           <h1>{artisan.nom_artisan}</h1>
         </div>
         <div className="cardSection note">
-          <ArtisanRating note={artisan.note}></ArtisanRating>
+          <div className="cardSubtitle">
+            <ArtisanRating note={artisan.note}></ArtisanRating>
+          </div>
         </div>
         <div className="cardSection spe">
           <h2 className="cardSubtitle">{artisan.specialite?.nom_spe}</h2>

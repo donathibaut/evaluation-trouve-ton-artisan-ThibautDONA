@@ -24,19 +24,20 @@ export default function NavbarArtisans({ cat, loading }) {
     return spe.artisans?.map((artisan) => {
       return (
         <Link
-          className="result"
+          // si ("top" : false) -> background rouge
+          className={`result card resultCard ${artisan.top ? "" : "notTop"}`}
           to={`/artisan?id=${artisan.ID_ARTISAN}`}
           key={artisan.ID_ARTISAN}
         >
-          <ul>
+          <ul className="card-body cardList">
             <li>
               <h2>{artisan.nom_artisan}</h2>
             </li>
             <li>
               <ArtisanRating note={artisan.note}></ArtisanRating>
             </li>
-            <li>{spe.nom_spe}</li>
-            <li>{artisan.ville?.nom_ville}</li>
+            <li className="detailText">{spe.nom_spe}</li>
+            <li className="detailText">{artisan.ville?.nom_ville}</li>
           </ul>
         </Link>
       );

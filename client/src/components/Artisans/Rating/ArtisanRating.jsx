@@ -58,5 +58,5 @@ export default function ArtisanRating({ note }) {
     }
   }
 
-  return <div className="cardSubtitle">{starsArray}</div>;
+  return <div className="starsRate">{starsArray}</div>;
 }

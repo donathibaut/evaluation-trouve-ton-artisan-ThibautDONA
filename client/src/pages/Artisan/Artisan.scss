@@ -22,7 +22,7 @@ form {
 
 .card {
   background-color: #f1f8fc;
-  box-shadow: 0 0 10px;
+  box-shadow: 0 0 5px;
   .card-body {
     div {
       padding-top: 15px;
@@ -33,17 +33,16 @@ form {
         border-bottom: none;
         padding-top: 0;
         padding-bottom: 15px;
+        text-align: center;
+
+        div {
+          padding-top: 0;
+          border-bottom: 0;
+        }
       }
     }
 
     //CLASS
-    .website {
-      border-top: 1px solid #0074c7;
-    }
-    .website,
-    .contact {
-      border-bottom: 0 !important;
-    }
     .identity {
       display: flex;
       justify-content: center;
@@ -60,15 +59,19 @@ form {
         border-radius: 100%;
       }
     }
+    .website {
+      border-top: 1px solid #0074c7;
+    }
+    .contact,
+    .starsRate,
+    .website {
+      border-bottom: 0;
+    }
   }
 }
 
 .cardMain {
   padding: 0 5px;
-}
-
-.cardSubtitle {
-  text-align: center;
 }
 
 .website {
