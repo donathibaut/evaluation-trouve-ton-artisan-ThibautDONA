@@ -3,6 +3,25 @@
 @import "bootstrap/scss/bootstrap";
 
 // SCSS
+
+html {
+  height: 100%;
+}
 img {
   height: 300px;
+}
+main {
+  min-height: 100vh;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+// RESPONSIVE
+@media all and (min-width: 1440px) {
+  main {
+    padding: 0 90px;
+  }
 }

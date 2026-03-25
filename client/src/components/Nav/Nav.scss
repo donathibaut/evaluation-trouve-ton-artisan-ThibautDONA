@@ -80,6 +80,11 @@ header {
         }
       }
     }
+    @media all and (min-width: 1440px) {
+      .container-fluid {
+        padding: 0 90px;
+      }
+    }
   }
 }
 
