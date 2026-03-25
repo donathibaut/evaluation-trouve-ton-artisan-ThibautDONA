@@ -6,6 +6,9 @@
  * @returns {JSX.Element}
  * @description Gestion du chargement et préparation de l'affichage du classement des artisans
  */
+
+import ArtisanRating from "./Rating/ArtisanRating";
+
 export default function TopArtisansList({ top, loading }) {
   return loading ? (
     <p className="loading">Chargement en cours...</p>
@@ -16,7 +19,9 @@ export default function TopArtisansList({ top, loading }) {
           <li>
             <h2>{artisan.nom_artisan}</h2>
           </li>
-          <li>{artisan.note}</li>
+          <li>
+            <ArtisanRating note={artisan.note}></ArtisanRating>
+          </li>
           <li>{artisan.specialite?.nom_spe}</li>
           <li>{artisan.ville?.nom_ville}</li>
         </ul>

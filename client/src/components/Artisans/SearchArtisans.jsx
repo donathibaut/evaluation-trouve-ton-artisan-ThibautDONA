@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import ArtisanRating from "./Rating/ArtisanRating";
+
 /**
  * @function SearchArtisans
  * @param {Object} props
@@ -30,7 +32,9 @@ export default function SearchArtisans({ artisan, loading, message }) {
           <li>
             <h2>{element.nom_artisan}</h2>
           </li>
-          <li>{element.note}</li>
+          <li>
+            <ArtisanRating note={element.note}></ArtisanRating>
+          </li>
           <li>{element.specialite?.nom_spe}</li>
           <li>{element.ville?.nom_ville}</li>
         </ul>

@@ -84,7 +84,7 @@ export default function Nav() {
                     onSubmit={(event) => searchHandler(event, input, navigate)}
                   >
                     <input
-                      className="searchBar"
+                      className="searchBar__area"
                       type="text"
                       placeholder="Nom de l'artisan..."
                       // mise à jour dynamique quand l'utilisateur écrit
@@ -92,7 +92,11 @@ export default function Nav() {
                       onChange={(event) => setInput(event.target.value)}
                       required
                     />
-                    <button type="submit">
+                    <button
+                      className="loupeBtn"
+                      data-bs-dismiss="offcanvas"
+                      type="submit"
+                    >
                       <i className="bi bi-search"></i>
                     </button>
                   </form>

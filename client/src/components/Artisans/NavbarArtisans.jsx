@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 
+import ArtisanRating from "./Rating/ArtisanRating";
+
 /**
  * @function NavbarArtisans
  * @param {Object} props
@@ -30,7 +32,9 @@ export default function NavbarArtisans({ cat, loading }) {
             <li>
               <h2>{artisan.nom_artisan}</h2>
             </li>
-            <li>{artisan.note}</li>
+            <li>
+              <ArtisanRating note={artisan.note}></ArtisanRating>
+            </li>
             <li>{spe.nom_spe}</li>
             <li>{artisan.ville?.nom_ville}</li>
           </ul>
