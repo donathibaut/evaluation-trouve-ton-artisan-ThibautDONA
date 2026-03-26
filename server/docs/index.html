@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3> </h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><h1>evaluation-trouve-ton-artisan-ThibautDONA</h1>
+<p>Création du site web &quot;Trouve ton artisan !&quot; permettant de répertorier les artisans de la région Auvergne-Rhône-Alpes (France)</p>
+<p>Français</p>
+<h2>Prérequis</h2>
+<p>Ce projet utilise les ressources suivantes :</p>
+<ul>
+<li>git</li>
+<li>Node.js v24.12.0</li>
+<li>npm</li>
+<li>Express</li>
+<li>Sequelize</li>
+<li>XAMPP</li>
+<li>MySQL</li>
+<li>PhpMyAdmin</li>
+</ul>
+<h2>Installation</h2>
+<ol>
+<li>
+<p>Installez nvm :
+https://www.nvmnode.com/guide/installation.html</p>
+</li>
+<li>
+<p>Installez Node.js + npm :
+Dans le terminal, utilisez :</p>
+</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>nvm install 24.12.0
+</code></pre>
+<p>puis :</p>
+<pre class="prettyprint source lang-bash"><code>nvm use 24.12.0
+</code></pre>
+<p>Pour voir si c'est bien installé :</p>
+<pre class="prettyprint source lang-bash"><code>node -v
+</code></pre>
+<p>(Vous devriez voir : v.24.12.0)</p>
+<ol start="3">
+<li>
+<p>Installez git :
+https://git-scm.com</p>
+</li>
+<li>
+<p>Clonez le repository :
+Dans votre terminal, utilisez :</p>
+</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
+</code></pre>
+<ol start="5">
+<li>Installez les packages (dont Express) :
+Avec le terminal, allez à la racine du projet.
+Dans le terminal, utilisez :</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm i
+</code></pre>
+<pre><code>Ensuite, faites de même dans le répertoire client et le répertoire server.
+</code></pre>
+<ol start="6">
+<li>
+<p>Installez XAMPP :
+https://www.apachefriends.org/fr/index.html</p>
+</li>
+<li>
+<p>Allez sur PhpMyAdmin :
+Sur l'interface XAMPP, appuyez sur les boutons &quot;Start&quot; des lignes Apache et MySQL.
+Ensuite, cliquez sur le bouton &quot;Admin&quot; de la ligne MySQL, celle-ci vous enverra sur PhpMyAdmin.</p>
+</li>
+</ol>
+<hr>
+<p>English</p>
+<h1>evaluation-trouve-ton-artisan-ThibautDONA</h1>
+<p>Creation of the website &quot;Trouve ton artisan !&quot; helping you to find craftsmen of the French region Auvergne-Rhône-Alpes</p>
+<h2>Requirements</h2>
+<p>This project uses the following resources :</p>
+<ul>
+<li>git</li>
+<li>Node.js v24.12.0</li>
+<li>npm</li>
+<li>Express</li>
+<li>Sequelize</li>
+<li>XAMPP</li>
+<li>MySQL</li>
+<li>PhpMyAdmin</li>
+</ul>
+<h2>Installation</h2>
+<ol>
+<li>
+<p>Install nvm :
+https://www.nvmnode.com/guide/installation.html</p>
+</li>
+<li>
+<p>Install Node.js + npm :
+In the terminal, use :</p>
+</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>nvm install 24.12.0
+</code></pre>
+<p>then :</p>
+<pre class="prettyprint source lang-bash"><code>nvm use 24.12.0
+</code></pre>
+<p>To see if it's correctly installed :</p>
+<pre class="prettyprint source lang-bash"><code>node -v
+</code></pre>
+<p>(You should see : v.24.12.0)</p>
+<ol start="3">
+<li>
+<p>Install git :
+https://git-scm.com</p>
+</li>
+<li>
+<p>Clone this repository :
+In your terminal, use :</p>
+</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>git clone https://github.com/donathibaut/evaluation-api-ThibautDONA
+</code></pre>
+<ol start="5">
+<li>Install the packages (including Express) :
+With the terminal, go to the project root folder.
+In the terminal, use :</li>
+</ol>
+<pre class="prettyprint source lang-bash"><code>npm i
+</code></pre>
+<pre><code>Then do the same in the client and the server directory.
+</code></pre>
+<ol start="6">
+<li>
+<p>Install XAMPP :
+https://www.apachefriends.org/fr/index.html</p>
+</li>
+<li>
+<p>Go to PhpMyAdmin :
+On XAMPP interface, select &quot;Start&quot; buttons in the Apache and MySQL areas.
+Then, click on the &quot;Admin&quot; button in the MySQL area, this one will redirect you on PhpMyAdmin.</p>
+</li>
+</ol></article>
+    </section>
+
+
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>app.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Mise en place du module express</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>config/config.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Initialisation de sequelize</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="config_config.js.html">config/config.js</a>, <a href="config_config.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/artisan-controller.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Récupération de données à transmettre au fichier &quot;artisan-route.js&quot;</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_artisan-controller.js.html">controllers/artisan-controller.js</a>, <a href="controllers_artisan-controller.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/navbar-controller.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Récupération de données à transmettre au fichier &quot;navbar-route.js&quot;</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_navbar-controller.js.html">controllers/navbar-controller.js</a>, <a href="controllers_navbar-controller.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/search-controller.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Récupération de données à transmettre au fichier &quot;search-route.js&quot;</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_search-controller.js.html">controllers/search-controller.js</a>, <a href="controllers_search-controller.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>controllers/top-controller.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Récupération de données à transmettre au fichier &quot;top-route.js&quot;</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="controllers_top-controller.js.html">controllers/top-controller.js</a>, <a href="controllers_top-controller.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>index.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Connexion de l'API avec Sequelize</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>middlewares/route404.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Middleware destiné à gérer une ressource introuvable</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="middlewares_route404.js.html">middlewares/route404.js</a>, <a href="middlewares_route404.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>models/Artisan.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modèle Artisan</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Artisan.js.html">models/Artisan.js</a>, <a href="models_Artisan.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>models/Categorie.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modèle Categorie</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Categorie.js.html">models/Categorie.js</a>, <a href="models_Categorie.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>models/Specialite.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modèle Specialite</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Specialite.js.html">models/Specialite.js</a>, <a href="models_Specialite.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>models/Ville.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Modèle Ville</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_Ville.js.html">models/Ville.js</a>, <a href="models_Ville.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>models/index.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Déclaration des modèles + associations</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="models_index.js.html">models/index.js</a>, <a href="models_index.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/artisan-route.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Routes liées aux données de l'artisan</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_artisan-route.js.html">routes/artisan-route.js</a>, <a href="routes_artisan-route.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/navbar-route.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Routes liées aux Liens de la navbar</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_navbar-route.js.html">routes/navbar-route.js</a>, <a href="routes_navbar-route.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/search-route.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Routes liées à la recherche</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_search-route.js.html">routes/search-route.js</a>, <a href="routes_search-route.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+
+
+
+<section>
+
+<header>
+    
+        <h2>routes/top-route.js</h2>
+        
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+        
+            <div class="description"><p>Routes liées au classement des artisans</p></div>
+        
+
+        
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="routes_top-route.js.html">routes/top-route.js</a>, <a href="routes_top-route.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-Artisan.html">Artisan</a></li><li><a href="module-Categorie.html">Categorie</a></li><li><a href="module-Specialite.html">Specialite</a></li><li><a href="module-Ville.html">Ville</a></li><li><a href="module-app.html">app</a></li></ul><h3>Global</h3><ul><li><a href="global.html#catArtisans">catArtisans</a></li><li><a href="global.html#infoArtisans">infoArtisans</a></li><li><a href="global.html#initApi">initApi</a></li><li><a href="global.html#searchArtisans">searchArtisans</a></li><li><a href="global.html#sequelize">sequelize</a></li><li><a href="global.html#topArtisans">topArtisans</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Thu Mar 26 2026 13:23:03 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

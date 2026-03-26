@@ -15,7 +15,7 @@ export default function ArtisanRating({ note }) {
   /**
    * @function roundDecimal
    * @param {Number} nb - nb à arrondir
-   * @returns
+   * @returns arrondi
    * @description Arrondit un nombre à 0.5
    */
   const roundDecimal = (nb) => {
@@ -27,7 +27,7 @@ export default function ArtisanRating({ note }) {
   /**
    * @function composeArray
    * @param {Number} noteRound - note arrondie
-   * @returns transmet des éléments pour array
+   * @returns {Array} transmet des éléments pour array
    * @description Transmet une note décomposée en unités à un tableau
    */
   const composeArray = (noteRound) => {
