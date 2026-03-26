@@ -96,7 +96,7 @@ This project uses the following resources :
 1. Install nvm :
    https://www.nvmnode.com/guide/installation.html
 
-2. Installez Node.js + npm :
+2. Install Node.js + npm :
    In the terminal, use :
 
 ```bash
