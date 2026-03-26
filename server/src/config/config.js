@@ -5,6 +5,8 @@
 
 const { Sequelize } = require("sequelize");
 
+const isProduction = process.env.NODE_ENV === "production";
+
 /**
  * Mise en place de sequelize ('database', 'user', 'password', {})
  * @type {Sequelize}
@@ -18,6 +20,14 @@ const sequelize = new Sequelize(
     port: parseInt(process.env.DB_PORT) || 3307,
     dialect: "mysql",
     logging: false,
+    dialectOptions: isProduction
+      ? {
+          ssl: {
+            require: true,
+            rejectUnauthorized: false,
+          },
+        }
+      : {},
   },
 );
 
