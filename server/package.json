@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "env-cmd -f ./env/.env nodemon src/index.js",
     "start": "env-cmd -f ./env/.env node src/index.js",
-    "doc": "jsdoc -c jsdoc.json"
+    "doc": "jsdoc -c jsdoc.json",
+    "prod": "node src/index.js"
   },
   "keywords": [],
   "author": "",
