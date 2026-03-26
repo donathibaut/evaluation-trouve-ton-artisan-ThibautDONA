@@ -25,9 +25,9 @@ CREATE DATABASE IF NOT EXISTS `trouve-ton-artisan` DEFAULT CHARACTER SET utf8mb4
 USE `trouve-ton-artisan`;
 
 -- Création d'un administrateur
-DROP USER IF EXISTS ''@'';
-CREATE USER IF NOT EXISTS ''@'' IDENTIFIED BY '';
-GRANT ALL PRIVILEGES ON ``.* TO ''@'' WITH GRANT OPTION;
+DROP USER IF EXISTS ''@'localhost';
+CREATE USER IF NOT EXISTS ''@'localhost' IDENTIFIED BY '';
+GRANT ALL PRIVILEGES ON ``.* TO ''@'localhost' WITH GRANT OPTION;
 FLUSH PRIVILEGES;
 -- --------------------------------------------------------
 
