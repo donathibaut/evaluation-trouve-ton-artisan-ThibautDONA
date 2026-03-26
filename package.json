@@ -3,12 +3,7 @@
     "doc": "jsdoc -c jsdoc.json"
   },
   "devDependencies": {
-    "jsdoc": "^4.0.5",
-    "sass": "^1.98.0"
+    "jsdoc": "^4.0.5"
   },
-  "dependencies": {
-    "bootstrap": "^5.3.8",
-    "bootstrap-icons": "^1.13.1",
-    "react-helmet-async": "^3.0.0"
-  }
+  "dependencies": {}
 }
