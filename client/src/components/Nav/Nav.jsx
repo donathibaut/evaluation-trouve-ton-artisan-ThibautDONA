@@ -32,8 +32,8 @@ export default function Nav() {
                   style={{ pointerEvents: "none" }}
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasSearchBar"
-                  aria-controls="offcanvasNavbar"
-                  aria-label="Toggle navigation"
+                  aria-controls="offcanvasSearchBar"
+                  aria-label="Barre de recherche"
                 >
                   <i
                     className="bi bi-search"
@@ -46,8 +46,8 @@ export default function Nav() {
                   type="button"
                   data-bs-toggle="offcanvas"
                   data-bs-target="#offcanvasSearchBar"
-                  aria-controls="offcanvasNavbar"
-                  aria-label="Toggle navigation"
+                  aria-controls="offcanvasSearchBar"
+                  aria-label="Barre de recherche"
                 >
                   <i className="bi bi-search"></i>
                 </button>
@@ -59,7 +59,7 @@ export default function Nav() {
                 data-bs-toggle="offcanvas"
                 data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar"
-                aria-label="Toggle navigation"
+                aria-label="Choisir une catégorie"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 {isOpen ? (
@@ -75,7 +75,8 @@ export default function Nav() {
                 className="offcanvas offcanvas-end"
                 tabIndex="-1"
                 id="offcanvasSearchBar"
-                aria-labelledby="offcanvasNavbarLabel"
+                aria-label="Barre de recherche"
+                role="dialog"
               >
                 <div className="offcanvas-body">
                   {/* Barre de recherche */}
@@ -107,7 +108,8 @@ export default function Nav() {
                 className="offcanvas offcanvas-end"
                 tabIndex="-1"
                 id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel"
+                aria-label="Choisir une catégorie"
+                role="dialog"
               >
                 <div className="offcanvas-body">
                   <ul className="categories navbar-nav justify-content-end flex-grow-1 pe-3">

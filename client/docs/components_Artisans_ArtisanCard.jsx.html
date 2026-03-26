@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: components/Artisans/ArtisanCard.jsx</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: components/Artisans/ArtisanCard.jsx</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import ExtLink from "../ExtLink";
+
+import ArtisanRating from "./Rating/ArtisanRating";
+
+import defaultArtisan from "../../assets/img/defaultArtisan.png";
+
+/**
+ * @function ArtisanCard
+ * @param {Object} props
+ * @param {Array} props.artisan - tableau contenant les données relatives à l'artisan choisi
+ * @param {Boolean} props.loading - permet de définir l'état du chargement
+ * @returns {JSX.Element}
+ * @description Gestion du chargement et préparation de l'affichage de la card artisan
+ */
+export default function ArtisanCard({ artisan, loading }) {
+  return loading ? (
+    &lt;p className="loading">Chargement en cours...&lt;/p>
+  ) : (
+    &lt;section className="card">
+      &lt;div className="card-body">
+        &lt;div className="cardSection identity">
+          &lt;img src={defaultArtisan} alt="Artisan" />
+          &lt;h1>{artisan.nom_artisan}&lt;/h1>
+        &lt;/div>
+        &lt;div className="cardSection note">
+          &lt;div className="cardSubtitle">
+            &lt;ArtisanRating note={artisan.note}>&lt;/ArtisanRating>
+          &lt;/div>
+        &lt;/div>
+        &lt;div className="cardSection spe">
+          &lt;h2 className="cardSubtitle">{artisan.specialite?.nom_spe}&lt;/h2>
+        &lt;/div>
+        &lt;div className="cardSection loc">
+          &lt;h2 className="cardSubtitle">{artisan.ville?.nom_ville}&lt;/h2>
+        &lt;/div>
+        &lt;div className="cardSection about">
+          &lt;h2 className="cardSubtitle">A propos&lt;/h2>
+          &lt;p className="aboutText">{artisan.a_propos}&lt;/p>
+        &lt;/div>
+        &lt;div className="cardSection contact">
+          {/*
+          ATTENTION : Dans le cadre du devoir, je n'ai pas paramétré ce formulaire.
+          Celui-ci rempli, renvoie vers la page "Not Found".
+          */}
+          &lt;h2 className="cardSubtitle">Formulaire de contact&lt;/h2>
+          {artisan.email &amp;&amp; (
+            &lt;form action="post" className="contact__form">
+              &lt;label htmlFor="name">nom&lt;/label>
+              &lt;input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Votre nom..."
+                required
+              />
+              &lt;label htmlFor="email">email&lt;/label>
+              &lt;input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Votre adresse mail..."
+                required
+              />
+              &lt;label htmlFor="objet">objet&lt;/label>
+              &lt;input
+                type="text"
+                id="objet"
+                name="objet"
+                placeholder="Votre objet..."
+                required
+              />
+              &lt;label htmlFor="message">message&lt;/label>
+              &lt;textarea
+                name="message"
+                id="message"
+                placeholder="Vote message..."
+                rows={"5"}
+                cols={"10"}
+                required
+              >&lt;/textarea>
+              &lt;button type="submit">Envoyer&lt;/button>
+            &lt;/form>
+          )}
+        &lt;/div>
+        {artisan.site_web &amp;&amp; (
+          &lt;div className="cardSection website">
+            &lt;ExtLink className="website__link" href={artisan.site_web}>
+              &lt;p>Accéder au site web&lt;/p>
+              &lt;i className="bi bi-arrow-right">&lt;/i>
+            &lt;/ExtLink>
+          &lt;/div>
+        )}
+      &lt;/div>
+    &lt;/section>
+  );
+}
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#ArtisanCard">ArtisanCard</a></li><li><a href="global.html#ArtisanRating">ArtisanRating</a></li><li><a href="global.html#NavbarArtisans">NavbarArtisans</a></li><li><a href="global.html#SearchArtisans">SearchArtisans</a></li><li><a href="global.html#TopArtisansList">TopArtisansList</a></li><li><a href="global.html#cleanUrl">cleanUrl</a></li><li><a href="global.html#composeArray">composeArray</a></li><li><a href="global.html#fetchArtisanRoute">fetchArtisanRoute</a></li><li><a href="global.html#fetchNavbarRoute">fetchNavbarRoute</a></li><li><a href="global.html#fetchSearchRoute">fetchSearchRoute</a></li><li><a href="global.html#fetchTopRoute">fetchTopRoute</a></li><li><a href="global.html#getArtisan">getArtisan</a></li><li><a href="global.html#getCat">getCat</a></li><li><a href="global.html#getName">getName</a></li><li><a href="global.html#getTop">getTop</a></li><li><a href="global.html#roundDecimal">roundDecimal</a></li><li><a href="global.html#searchHandler">searchHandler</a></li><li><a href="global.html#useArtisan">useArtisan</a></li><li><a href="global.html#useNavbarArtisans">useNavbarArtisans</a></li><li><a href="global.html#useSearchArtisans">useSearchArtisans</a></li><li><a href="global.html#useTopArtisans">useTopArtisans</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Thu Mar 26 2026 13:21:38 GMT+0100 (heure normale d’Europe centrale)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
