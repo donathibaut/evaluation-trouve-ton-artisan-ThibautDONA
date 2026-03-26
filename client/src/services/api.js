@@ -3,7 +3,11 @@
  * @description Relie REACT et Express
  */
 
-const apiURL = "http://localhost:3001/api";
+const isProd = window.location.hostname !== "localhost";
+
+const apiURL = isProd
+  ? "https://api-trouve-ton-artisan-hbm0.onrender.com/api"
+  : "http://localhost:3001/api";
 
 /**
  * @async
