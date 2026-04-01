@@ -13,6 +13,8 @@ START TRANSACTION;
 -- Suppression des données déjà présentes avant d'insérer
 --
 
+USE `trouve-ton-artisan`;
+
 DELETE FROM `artisan`;
 DELETE FROM `categorie`;
 DELETE FROM `specialite`;

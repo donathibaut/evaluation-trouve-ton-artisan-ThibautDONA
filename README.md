@@ -70,6 +70,18 @@ npm i
    Sur l'interface XAMPP, appuyez sur les boutons "Start" des lignes Apache et MySQL.
    Ensuite, cliquez sur le bouton "Admin" de la ligne MySQL, celle-ci vous enverra sur PhpMyAdmin.
 
+   Une fois que vous y serez, accédez à l'onglet SQL disponible depuis l'accueil et collez le script contenu
+   dans le fichier trouve-ton-artisan.sql (annexes/script_SQL).
+
+   Cela étant fait, dirigez-vous dans la base nouvellemnt créée, allez dans l'onglet SQL s'y trouvant
+   et collez le script data.sql.
+
+   La base de données est maintenant prête !
+
+8. Rendez-vous dans le fichier .env.example (dossier server/env) afin de copier le modèle fourni,
+   vous permettant de paramétrer le fichier .env que vous créerez sur le même répertoire.
+   Ainsi, vous paramétrerez le serveur.
+
 ---
 
 English
@@ -143,3 +155,13 @@ npm i
 7. Go to PhpMyAdmin :
    On XAMPP interface, select "Start" buttons in the Apache and MySQL areas.
    Then, click on the "Admin" button in the MySQL area, this one will redirect you on PhpMyAdmin.
+
+   Once you are there, go to the home page of PhpMyAdmin, then click on the "SQL" tab and paste the script named "trouve-ton-artisan.sql"
+   you will find in annexes/script_SQL.
+
+   After that, head for the new database and click on the "SQL" tab and paste the script named "data.sql".
+
+   Well done, the database is now ready !
+
+8. Go to the .env.example file (server/env) to copy the example for the .env file you will create in the same directory.
+   This .env will give you the possibility to set the server parameters.

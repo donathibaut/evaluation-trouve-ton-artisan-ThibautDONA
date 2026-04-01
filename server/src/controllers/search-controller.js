@@ -2,10 +2,7 @@
  * @file search-controller.js
  * @description Récupération de données à transmettre au fichier "search-route.js"
  */
-const { Artisan, Ville, Specialite } = require("../models");
-
-// nécessaire pour utiliser Op.like (permet des recherches avec des noms écrits partiellement)
-const { Op } = require("sequelize");
+const searchService = require("../services/search-service");
 
 /**
  * @async
@@ -26,14 +23,7 @@ const searchArtisans = async (req, res) => {
       });
     }
 
-    const research = await Artisan.findAll({
-      where: {
-        // [Op.like]: `%${search}%` -> on recherche un nom semblable à ce que l'utilisateur a écrit (s'il écrit le début, par exemple)
-        nom_artisan: { [Op.like]: `%${search}%` },
-      },
-      include: [Ville, Specialite],
-      order: [["nom_artisan", "ASC"]],
-    });
+    const { research } = await searchService(search);
 
     if (research.length === 0) {
       return res.status(200).json({

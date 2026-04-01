@@ -2,10 +2,7 @@
  * @file artisan-controller.js
  * @description Récupération de données à transmettre au fichier "artisan-route.js"
  */
-const { Artisan, Ville, Specialite, Categorie } = require("../models");
-
-// nécessaire pour utiliser Op.eq (Operator = ...)
-const { Op } = require("sequelize");
+const artisanService = require("../services/artisan-service");
 
 /**
  * @async
@@ -20,23 +17,7 @@ const infoArtisan = async (req, res) => {
     // récupère l'id de l'artisan demandé via la valeur de "?id="
     const id = req.query.id;
 
-    // récupère les données de l'artisan
-    const artisanData = await Artisan.findOne({
-      where: {
-        ID_ARTISAN: { [Op.eq]: id },
-      },
-      include: [
-        { model: Ville },
-        {
-          model: Specialite,
-          include: [
-            {
-              model: Categorie,
-            },
-          ],
-        },
-      ],
-    });
+    const artisanData = await artisanService(id);
 
     if (!artisanData) {
       return res.status(404).json({

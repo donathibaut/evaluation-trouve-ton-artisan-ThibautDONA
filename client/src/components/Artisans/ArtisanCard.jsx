@@ -3,6 +3,7 @@ import ExtLink from "../ExtLink";
 import ArtisanRating from "./Rating/ArtisanRating";
 
 import defaultArtisan from "../../assets/img/defaultArtisan.png";
+import submitHandler from "../../utils/handlers/submitHandler";
 
 /**
  * @function ArtisanCard
@@ -38,13 +39,13 @@ export default function ArtisanCard({ artisan, loading }) {
           <p className="aboutText">{artisan.a_propos}</p>
         </div>
         <div className="cardSection contact">
-          {/*
-          ATTENTION : Dans le cadre du devoir, je n'ai pas paramétré ce formulaire.
-          Celui-ci rempli, renvoie vers la page "Not Found".
-          */}
           <h2 className="cardSubtitle">Formulaire de contact</h2>
           {artisan.email && (
-            <form action="post" className="contact__form">
+            <form
+              action="post"
+              className="contact__form"
+              onSubmit={submitHandler}
+            >
               <label htmlFor="name">nom</label>
               <input
                 type="text"

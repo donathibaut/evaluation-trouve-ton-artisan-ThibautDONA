@@ -18,7 +18,13 @@ const searchRoute = require("./routes/search-route");
 const navbarRoute = require("./routes/navbar-route");
 const route404 = require("./middlewares/route404");
 
-app.use(cors());
+const corsSettings = {
+  origin: process.env.WEBSITE_URL || "http://localhost:3000",
+  methods: "GET,POST",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsSettings));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 

@@ -1,6 +1,6 @@
 /**
  * @file ExtLink.js
- * @description Contient une fonction permettant de disposer de liens externes déjà paramétrés et sécurisés
+ * @description Contient un composant permettant de disposer de liens externes déjà paramétrés et sécurisés
  */
 
 /**
