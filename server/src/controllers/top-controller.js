@@ -2,10 +2,7 @@
  * @file top-controller.js
  * @description Récupération de données à transmettre au fichier "top-route.js"
  */
-const { Artisan, Ville, Specialite } = require("../models");
-
-// nécessaire pour utiliser Op.gt ("opérateur supérieur à ...")
-const { Op } = require("sequelize");
+const topService = require("../services/top-service");
 
 /**
  * @async
@@ -17,20 +14,9 @@ const { Op } = require("sequelize");
  */
 const topArtisans = async (req, res) => {
   try {
-    // récupération des artisans
-    const topListArtisans = await Artisan.findAll({
-      where: {
-        // [Op.gt]: 4.7 -> Operator greater than 4.7
-        note: { [Op.gt]: 4.7 },
-        top: true,
-      },
-      include: [Ville, Specialite],
-      // Artisans -> listés dans l'ordre desc selon la note (max: 3 artisans listés)
-      order: [["note", "DESC"]],
-      limit: 3,
-    });
+    const { top } = await topService();
 
-    if (topListArtisans.length === 0) {
+    if (top.length === 0) {
       return res.status(404).json({
         message: "Artisans introuvables",
       });
@@ -38,7 +24,7 @@ const topArtisans = async (req, res) => {
 
     res.status(200).json({
       message: "Succès : Données obtenues",
-      topListArtisans,
+      top,
     });
   } catch (err) {
     res.status(500).json({

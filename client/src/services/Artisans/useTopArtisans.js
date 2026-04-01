@@ -29,8 +29,8 @@ export default function useTopArtisans() {
     const getTop = async () => {
       try {
         const data = await fetchTopRoute();
-        if (data.topListArtisans) {
-          setTop(data.topListArtisans);
+        if (data.top) {
+          setTop(data.top);
         } else {
           setTop([]);
         }
